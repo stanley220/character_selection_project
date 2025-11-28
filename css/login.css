@@ -1,0 +1,71 @@
+body {
+    text-align: center;
+    width: 700px;
+    margin: 100px auto;
+    border: 1px solid #ccc; /* Zmieniono kolor na jaśniejszy */
+    padding: 20px; /* Zwiększono padding dla lepszego wyglądu */
+    border-radius: 8px;
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+}
+
+h1 {
+    border-bottom: 1px solid #aaa; /* Pełna definicja ramki */
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+label {
+    text-align: left;
+    margin-top: 20px;
+    margin-left: 20%; 
+    display: block;
+}
+
+.input-group {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+input[type="email"], 
+input[type="password"],
+input[type="date"] {
+    font-size: 17px;
+    height: 30px;
+    width: 60%; /* Procentowa szerokość dla lepszej adaptacji */
+    margin: 5px 0 0 0; /* Górny margines, aby oddzielić od etykiety */
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Ważne, aby padding nie zwiększał całkowitej szerokości */
+}
+
+input[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 15px; 
+    font-size: 18px;
+    background-color: #007bff; /* Dodano kolor tła */
+    color: white; /* Biały tekst */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}   
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+p {
+    text-align: center;
+    margin-top: 30px;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+}
