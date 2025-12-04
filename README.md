@@ -10,8 +10,7 @@ Projekt demonstrujący pełny cykl życia użytkownika w aplikacji webowej (reje
 * **Dynamiczne Routing:** Logika w `login.php` dynamicznie kieruje użytkownika na właściwą stronę na podstawie stanu konta:
     * Brak Postaci $\rightarrow$ Kreator Postaci (`index.php`)
     * Posiada Postacie $\rightarrow$ Menu Wyboru (`menu.php`)
-* **Dobre Praktyki PHP:** Konsekwentne użycie operatora ścisłego porównania `===` w celu unikania błędów konwersji typów.
-
+    
 ---
 
 ## ⚙️ Instrukcja Uruchomienia Projektu
@@ -20,7 +19,7 @@ Projekt demonstrujący pełny cykl życia użytkownika w aplikacji webowej (reje
 
 * **Środowisko Serwerowe:** PHP 7.4+
 * **Baza Danych:** MySQL / MariaDB
-* **Lokalne Środowisko:** XAMPP / WAMP / Laragon (zapewnia Apache, MySQL i PHP)
+* **Lokalne Środowisko:** XAMPP / WAMP / Laragon
 
 ### 2. Klonowanie Repozytorium
 
