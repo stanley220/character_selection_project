@@ -74,12 +74,14 @@ $db_pass = 'twoje_hasło_mysql'; // Zmień: np. puste lub ustawione hasło
 ### 5. Uruchomienie i Testowanie
 * Uruchom serwer Apache (np. z panelu kontrolnego XAMPP).
 
-* Przejdź w przeglądarce do adresu projektu: http://localhost/ścieżka_do_projektu/register.php
+* Przejdź w przeglądarce do adresu projektu: http://localhost/ścieżka_do_projektu/index.php
 
     Testuj Ścieżki Aplikacji:
 
-        Rejestracja: Wypełnij formularz. Po sukcesie system przekieruje Cię na login.php.
+    Strona Startowa: System przeniesie Cię na stronę powitalną (index.php), gdzie możesz wybrać Logowanie lub Rejestrację.
 
-        Logowanie (Nowy Użytkownik): Zaloguj się. System sprawdzi, że nie masz postaci (hasCharacters() zwróci false) i przekieruje Cię do Kreatora (index.php).
+    Rejestracja: Wypełnij formularz. Po sukcesie system przekieruje Cię na login.php.
 
-        Logowanie (Powracający Użytkownik): Po stworzeniu pierwszej postaci, system przekieruje Cię do Menu Wyboru Postaci (menu.php).
+    Logowanie (Nowy Użytkownik): Zaloguj się. System sprawdzi, że nie masz postaci (hasCharacters() zwróci false) i przekieruje Cię do Kreatora (creation.php).
+
+    Logowanie (Powracający Użytkownik): Po stworzeniu pierwszej postaci, system przekieruje Cię do Menu Wyboru Postaci (characterSelection.php).
