@@ -1,5 +1,8 @@
 <?php 
 
+ini_set('session.gc_maxlifetime', 1800);
+session_set_cookie_params(1800);
+
 $db_name = "character_database";
 $db_pass = "";
 $db_host = "localhost";

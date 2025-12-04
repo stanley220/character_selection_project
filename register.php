@@ -16,15 +16,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     $age = ($_POST['age'] ?? '');
 
     if (empty($email) || empty($pass1) || empty($pass2) || empty($age)) {
-        $msg = "<p style = 'color: red;'>Wypełnij wszystkie pola!</p>"; 
+        $msg = "<p style = 'color: red; font-size: 15px;'>Wypełnij wszystkie pola!</p>"; 
     } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $msg = "<p style = 'color: red;'>Niepoprawny format adresu email!</p>";
+        $msg = "<p style = 'color: red; font-size: 15px;'>Niepoprawny format adresu email!</p>";
     } else if ($pass1 !== $pass2) {
-        $msg = "<p style = 'color: red;'>Hasła muszą być jednakowe!</p>";
+        $msg = "<p style = 'color: red; font-size: 15px;'>Hasła muszą być jednakowe!</p>";
     } else if (strlen($pass1) < 8) {
-        $msg = "<p style = 'color: red;'>Hasło musi mieć conajmniej 8 znaków</p>";
+        $msg = "<p style = 'color: red; font-size: 15px;'>Hasło musi mieć conajmniej 8 znaków</p>";
     } else if ($age > $ageRequired) {
-        $msg = "<p style = 'color: red;'>Musisz mieć conajmniej 18 lat!</p>";
+        $msg = "<p style = 'color: red; font-size: 15px;'>Musisz mieć conajmniej 18 lat!</p>";
     } else {
         try {
             $role = ($email === 'admin@gantasy.com') ? 'admin' : 'user';
@@ -36,9 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         } catch (\PDOException $e) {
             if ($e -> getCode() == '23000') {
-                $msg = "<p style = 'color: red;'>Konto z takim adresem email już istnieje!</p>";
+                $msg = "<p style = 'color: red; font-size: 15px;'>Konto z takim adresem email już istnieje!</p>";
             } else {
-                $msg = "<p style = 'color: red;'>Wystąpił błąd ze strony serwera. Spróbuj ponownie później!</p>";
+                $msg = "<p style = 'color: red; font-size: 15px;'>Wystąpił błąd ze strony serwera. Spróbuj ponownie później!</p>";
             }
         }
     }
@@ -60,13 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <body>
     <h1>Formularz rejestracji</h1>
 
-    <?php
-        if (!empty($msg)) {
-            echo $msg;
-        }
-    ?>
-
-    <form action="" method="post">
+    <form action="" method="post" novalidate>
         <div class="input-group">
             <label for="email">Podaj swój email</label>
             <input type="email" name="email" id="email" required>
@@ -84,11 +78,19 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <input type="date" name="age" id="age" required>
         </div>
         
-        
+        <?php
+        if (!empty($msg)) {
+            echo $msg;
+        }
+        ?>
         
         <input type="submit" value="Zarejestruj się">
     </form>
 
     <p>Masz już konto? <a href="./login.php">Zaloguj się!</a></p>
+
+    <p>
+        <a href="index.php">Powrót do strony głównej</a>
+    </p>
 </body>
 </html> 

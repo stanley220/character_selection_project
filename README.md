@@ -30,7 +30,7 @@ cd character_selection_project
 
 ### 3. Konfiguracja Bazy Danych (SQL)
 
-* Uruchom serwer MySQL i stwórz nową bazę danych. Następnie wykonaj poniższe zapytania SQL, aby stworzyć niezbędne tabele zgodne z kodem PHP:
+* Uruchom serwer MySQL i stwórz nową bazę danych np. "character_creator". Następnie wykonaj poniższe zapytania SQL, aby stworzyć niezbędne tabele zgodne z kodem PHP:
 
 ```sql
 -- TABELA 1: USERS (Uwierzytelnianie i profil)
@@ -54,8 +54,32 @@ CREATE TABLE characters (
     height INT,
     experience INT DEFAULT 0,
     gold_amount INT DEFAULT 0,
-    -- Powiązanie z użytkownikiem
     FOREIGN KEY (uId) REFERENCES users(id) ON DELETE CASCADE
 );
 
 ```
+
+### 4. Konfiguracja Połączenia (PHP)
+
+* Otwórz plik config/db_config.php i zaktualizuj dane dostępowe do swojej bazy danych:
+
+```php
+// config/db_config.php
+$dsn = 'mysql:host=localhost;dbname=twoja_nazwa_bazy;charset=utf8mb4'; // Zmień: twoja_nazwa_bazy
+$db_user = 'twój_użytkownik_mysql'; // Zmień: np. root
+$db_pass = 'twoje_hasło_mysql'; // Zmień: np. puste lub ustawione hasło
+// ...
+```
+
+### 5. Uruchomienie i Testowanie
+* Uruchom serwer Apache (np. z panelu kontrolnego XAMPP).
+
+* Przejdź w przeglądarce do adresu projektu: http://localhost/ścieżka_do_projektu/register.php
+
+    Testuj Ścieżki Aplikacji:
+
+        Rejestracja: Wypełnij formularz. Po sukcesie system przekieruje Cię na login.php.
+
+        Logowanie (Nowy Użytkownik): Zaloguj się. System sprawdzi, że nie masz postaci (hasCharacters() zwróci false) i przekieruje Cię do Kreatora (index.php).
+
+        Logowanie (Powracający Użytkownik): Po stworzeniu pierwszej postaci, system przekieruje Cię do Menu Wyboru Postaci (menu.php).

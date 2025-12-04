@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <h1>Formularz logowania</h1>
-    <form action="" method="post">
+    <form action="" method="post" novalidate>
         <div class="input-group">
             <label for="email">Podaj swój email</label>
             <input type="email" name="email" id="email" required>
@@ -79,7 +79,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </form>
 
     <p>Nie masz jeszcze konta? <a href="./register.php">Zarejestruj się!</a></p>
-    
+    <p>
+        <a href="index.php">Powrót do strony głównej</a>
+    </p>
+            
 
     
 </body>

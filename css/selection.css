@@ -1,91 +1,83 @@
 body {
-    text-align: center;
     width: 900px;
-    margin: 100px auto;
-    border: 1px solid #ccc; /* Zmieniono kolor na jaśniejszy */
-    padding: 20px; /* Zwiększono padding dla lepszego wyglądu */
+    margin: 50px auto;
+    border: 1px solid #ccc;
+    padding: 20px;
     border-radius: 8px;
-    font-size: 20px;
+    font-size: 18px;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; 
+    text-align: center;
+    text-decoration: none;
 }
 
 h1 {
-    border-bottom: 1px solid #aaa; /* Pełna definicja ramki */
+    border-bottom: 1px solid #aaa; 
     padding-bottom: 10px;
-    margin-bottom: 30px; /* Dodano margines dla oddzielenia od treści */
+    margin-bottom: 30px;
 }
 
-label {
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+}
+
+th {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 12px 8px;
     text-align: left;
-    margin-top: 20px;
-    margin-left: 20%; 
-    display: block;
+    color: #333;
+    font-weight: bold;
 }
 
-.input-group {
-    text-align: center;
-    margin-bottom: 15px;
+td {
+    border: 1px solid #eee;
+    padding: 10px 8px;
+    text-align: left;
+    vertical-align: middle;
 }
 
-input[type="email"], 
-input[type="password"],
-input[type="date"] {
-    font-size: 17px;
-    height: 30px;
-    width: 60%; /* Procentowa szerokość dla lepszej adaptacji */
-    margin: 5px 0 0 0; /* Górny margines, aby oddzielić od etykiety */
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Ważne, aby padding nie zwiększał całkowitej szerokości */
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+td form {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
 }
 
 input[type="submit"] {
-    margin-top: 20px;
-    padding: 10px 15px; 
-    font-size: 18px;
-    background-color: #007bff; /* Dodano kolor tła */
-    color: white; /* Biały tekst */
+    background-color: #007bff; 
+    color: white; 
+    padding: 8px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    font-size: 16px; 
     transition: background-color 0.3s;
-}   
+    width: auto;
+    
+}
 
 input[type="submit"]:hover {
     background-color: #0056b3;
 }
 
 p {
-    text-align: center;
-    margin-top: 30px; /* Zmieniono margines na ten z preferowanego stylu */
+    margin-top: 30px;
+    font-size: 18px;
 }
 
 a {
     text-decoration: none;
-    color: #007bff; /* Zmieniono kolor na ten z preferowanego stylu */
+    color: #007bff;
     font-weight: bold;
+    transition: color 0.3s;
 }
 
 a:hover {
     text-decoration: underline;
-}
-
-/* Zachowane style dla tabeli z drugiego pliku, z uwzględnieniem spójności kolorystycznej */
-table {
-    width: 100%;
-    border-collapse: collapse; 
-    margin-top: 25px;
-    margin-bottom: 25px;
-}
-
-th, td {
-    border: 1px solid #ccc; /* Zachowano kolor ramki spójny z resztą stylu */
-    padding: 6px; 
-    text-align: left;
-}
-    
-th {
-    background-color: #f5f5f5; 
-    font-weight: bold;
+    color: #0056b3;
 }

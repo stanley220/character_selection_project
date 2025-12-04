@@ -12,6 +12,8 @@
     $uId = $_SESSION['id'];
     $msg = "";
 
+    $hasCharacters = characterCheck($pdo, $uId);
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $nickname = htmlspecialchars(trim($_POST['nickname'] ?? ''));    
         $class = htmlspecialchars($_POST['class'] ?? '');    
@@ -56,7 +58,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Kreator Postaci Gry</title>
-        <link rel="stylesheet" href="./css/test.css">
+        <link rel="stylesheet" href="./css/creator.css">
         </style>
     </head>
     <body>
@@ -108,7 +110,13 @@
             <input type="submit" value="Utwórz Postać">
 
         </form>
-        
+            
+        <?php if ($hasCharacters): ?>
+            <p>
+                <a href="./characterSelection.php">Wróć do wyboru postaci</a>
+            </p>
+        <?php endif; ?>
+
         <script src="./scripts/scripts.js"></script>
         
     </body>
