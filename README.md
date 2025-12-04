@@ -31,9 +31,8 @@ cd character_selection_project
 ### 3. Konfiguracja Bazy Danych (SQL)
 
 * Uruchom serwer MySQL i stwórz nową bazę danych. Następnie wykonaj poniższe zapytania SQL, aby stworzyć niezbędne tabele zgodne z kodem PHP:
-* SQL
 
-```bash
+```sql
 -- TABELA 1: USERS (Uwierzytelnianie i profil)
 CREATE TABLE users (
     id INT AUTO_INCREMENT PRIMARY KEY,
